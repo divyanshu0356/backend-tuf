@@ -21,7 +21,7 @@ app.get("/show", (req, res) => {
     let q = "select username,language,input,left(code,100) as code,stamp from info"
     try {
         db.query(q, (err, result) => {
-            if (err) throw err
+            if (err) res.json("Error Happened")
             let data = result;
             res.render("home.ejs", { data });
         });
