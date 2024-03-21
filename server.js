@@ -52,7 +52,7 @@ app.post("/insert", (req, res) => {
 
     try {
         db.query(q, [values], (err, data) => {
-            if (err) console.log(err)
+            if (err) res.json("error happened")
             else console.log("data inserted");
         })
     }
